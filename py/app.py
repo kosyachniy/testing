@@ -8,26 +8,11 @@ conn = None
 
 @app.post('/')
 async def root():
-    data = await conn.fetch('''
-        SELECT * FROM "products"
-            WHERE TRUE
-                AND "products"."updated" > '2022-08-03 17:33:46'
-                AND "products"."sex" = 'male'
-            ORDER BY "index" ASC
-            LIMIT 52
-            OFFSET 0
-    ''')
+    data = await conn.fetch(os.getenv('SQL1'))
     if data:
-        data = await conn.fetch('''
-            SELECT COUNT(*) FROM "products"
-                WHERE TRUE
-                    AND "products"."updated" > '2022-08-03 17:33:46'
-                    AND "products"."sex" = 'male'
-        ''')
+        data = await conn.fetch(os.getenv('SQL2'))
         return data[0]
-
     return {'data': 'error'}
-
 
 async def init():
     global conn

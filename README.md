@@ -18,7 +18,11 @@ JS_PORT=8123
 PY_PORT=8124
 DB_HOST=host
 DB_PASS=password
-SERVER=http://localhost:8123/
+SQL1=sql_request_1
+SQL2=sql_request_2
+CURL=curl_request
+ENDPOINT_JS=http://localhost:8123/
+ENDPOINT_PY=http://localhost:8124/
                 </pre>
             </td>
             <td>
@@ -29,8 +33,12 @@ JS_PORT=8123
 PY_PORT=8124
 DB_HOST=host
 DB_PASS=password
-SERVER=/api/
 HOST=subdomain.domain.com
+SQL1=sql_request_1
+SQL2=sql_request_2
+CURL=curl_request
+ENDPOINT_JS=https://subdomain.domain.com/js/
+ENDPOINT_PY=http://subdomain.domain.com/py/
                 </pre>
             </td>
         </tr>
