@@ -16,7 +16,7 @@ const db = new Client({
 db.connect()
 
 app.post('/', function (req, res) {
-    db.query(`SELECT * FROM "products" WHERE TRUE AND "products"."updated" > '2022-08-03 17:33:46' AND "products"."sex" = 'male' ORDER BY "index" ASC LIMIT  52 OFFSET 0`, (error, data) => {
+    db.query(`SELECT * FROM "products" WHERE TRUE AND "products"."updated" > '2022-08-03 17:33:46' AND "products"."sex" = 'male' ORDER BY "index" ASC LIMIT 52 OFFSET 0`, (error, data) => {
         if (data.rows.length) {
             db.query(`SELECT COUNT(*) FROM "products" WHERE TRUE AND "products"."updated" > '2022-08-03 17:33:46' AND "products"."sex" = 'male'`, (error, data) => {
                 res.json(data.rows[0])

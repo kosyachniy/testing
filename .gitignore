@@ -1,6 +1,5 @@
 node_modules/
-.next/
 package-lock.json
-data/
+__pycache__/
 *.env
 .DS_Store

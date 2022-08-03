@@ -15,6 +15,7 @@
 NAME=proj_name
 MODE=local
 JS_PORT=8123
+PY_PORT=8124
 DB_HOST=host
 DB_PASS=password
 SERVER=http://localhost:8123/
@@ -25,6 +26,7 @@ SERVER=http://localhost:8123/
 NAME=proj_name
 MODE=prod
 JS_PORT=8123
+PY_PORT=8124
 DB_HOST=host
 DB_PASS=password
 SERVER=/api/
