@@ -14,9 +14,9 @@
                 <pre>
 NAME=proj_name
 MODE=local
-API_PORT=8123
-POSTGRESQL_HOST=host
-POSTGRESQL_PASS=password
+JS_PORT=8123
+DB_HOST=host
+DB_PASS=password
 SERVER=http://localhost:8123/
                 </pre>
             </td>
@@ -24,9 +24,9 @@ SERVER=http://localhost:8123/
                 <pre>
 NAME=proj_name
 MODE=prod
-API_PORT=8123
-POSTGRESQL_HOST=host
-POSTGRESQL_PASS=password
+JS_PORT=8123
+DB_HOST=host
+DB_PASS=password
 SERVER=/api/
 HOST=subdomain.domain.com
                 </pre>

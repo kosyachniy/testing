@@ -7,10 +7,10 @@ app.use(cors())
 app.use(express.json())
 
 const db = new Client({
-    host: process.env.POSTGRESQL_HOST,
+    host: process.env.DB_HOST,
     port: 5432,
     user: 'postgres',
-    password: process.env.POSTGRESQL_PASS,
+    password: process.env.DB_PASS,
     database: 'main',
 })
 db.connect()
