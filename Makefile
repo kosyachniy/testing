@@ -7,8 +7,8 @@ stop:
 	docker-compose stop
 
 set:
-	export APP_PORT=${APP_PORT} JS_PORT=${JS_PORT} HOST=${HOST}; \
-	envsubst '$${APP_PORT} $${JS_PORT} $${HOST}' < nginx.conf > /etc/nginx/sites-enabled/${NAME}.conf
+	export JS_PORT=${JS_PORT} PY_PORT=${PY_PORT} HOST=${HOST}; \
+	envsubst '$${JS_PORT} $${PY_PORT} $${HOST}' < nginx.conf > /etc/nginx/sites-enabled/${NAME}.conf
 	sudo systemctl restart nginx
 	sudo certbot --nginx
 

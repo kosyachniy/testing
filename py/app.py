@@ -4,19 +4,20 @@ import asyncpg
 from fastapi import FastAPI
 
 app = FastAPI()
-conn = None
+pool = None
 
 @app.post('/')
 async def root():
-    data = await conn.fetch(os.getenv('SQL1'))
-    if data:
-        data = await conn.fetch(os.getenv('SQL2'))
-        return data[0]
-    return {'data': 'error'}
+    async with pool.acquire() as conn:
+        data = await conn.fetch(os.getenv('SQL1'))
+        if data:
+            data = await conn.fetch(os.getenv('SQL2'))
+            return data[0]
+        return {'data': 'error'}
 
 async def init():
-    global conn
-    conn = await asyncpg.connect(
+    global pool
+    pool = await asyncpg.create_pool(
         host=os.getenv('DB_HOST'),
         port=5432,
         user='postgres',
